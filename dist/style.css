@@ -9,6 +9,7 @@ html{
     background: url("images/background.jpg") fixed;
     background-size: cover;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body{
@@ -45,6 +46,7 @@ header button{
     transition-duration: .2s;
     border-radius: 5px;
     padding: 5px;
+    text-shadow: 2px 2px 4px rgb(0,0,0);
 }
 
 header #order{
@@ -100,7 +102,7 @@ h2{
 }
 
 .image1{
-    background-image: url("images/ingredientsjpg.jpg");
+    background-image: url("images/ingredients.jpg");
     background-attachment: fixed;
     background-size: cover;
     z-index: -1;
@@ -139,4 +141,53 @@ h2{
     border-left: 2px solid white;
     padding-left: 10px;
     display: inline-block;
+}
+
+.menu{
+    margin-top: 30vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+    background-image: url("images/menubg.jpg");
+    background-repeat: repeat;
+    border-top: 20px solid rgb(206, 31, 14);
+
+}
+
+.card{
+    display: inline-block;
+    position: relative;
+    padding: 20px;
+    margin:10px;
+    width: 20%;
+    min-width: 200px;
+    background-color: rgb(255,255,255);
+    border-radius: 20px;
+    box-shadow: 2px 2px 6px rgb(0,0,0);
+}
+
+.card span {
+    color: black;
+    display: inline-block;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+#pizzaName{
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#pizzaPrice{
+    text-align:right;
+    display: block;
+    border-right: 2px solid black;
+    padding-right: 10px;
+    color: black;
+    font-weight: 500;
 }

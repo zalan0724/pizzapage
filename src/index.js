@@ -1,4 +1,5 @@
 import mainPage from "./Modules/mainPage";
+import menuPage from './Modules/menuPage';
 
 const createHeader = () =>{
     let header = document.createElement('header')
@@ -6,8 +7,10 @@ const createHeader = () =>{
     logo.setAttribute('src','images/logo.png')
     logo.setAttribute('alt','logo')
     let homeButton = document.createElement('button')
+    homeButton.addEventListener('click', ()=>loadPage('main'))
     homeButton.innerHTML='Home'
     let menuButton = document.createElement('button')
+    menuButton.addEventListener('click', ()=>loadPage('menu'))
     menuButton.innerHTML ='Menu'
     let contactButton = document.createElement('button')
     contactButton.innerHTML ='Contact'
@@ -43,10 +46,23 @@ const createFooter = () =>{
     return footer
 }
 
-(function loadPage() {
+function loadPage(page) {
     let content = document.querySelector('#content')
+    content.innerHTML = ''
     content.appendChild(createHeader())
-    content.appendChild(mainPage())
+    switch(page) {
+        case 'main':
+            content.appendChild(mainPage())
+            break
+        case 'menu':
+            content.appendChild(menuPage())
+            break
+        default:
+            content.appendChild(mainPage())
+            break
+    }
     content.appendChild(createFooter())
     console.log('Done')
-})()
+}
+loadPage()
+
