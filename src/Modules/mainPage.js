@@ -1,4 +1,4 @@
-const mainPage = () => {
+const mainPage = (() => {
     let article = document.createElement('article')
     let h1 = document.createElement('h1')
     h1.innerHTML = 'We love making the most delicious pizza!'
@@ -40,7 +40,7 @@ const mainPage = () => {
     deliverImages.appendChild(uber)
     article.appendChild(deliverImages)
 
-    return article
-}
+    return {article}
+})()
 
 export default mainPage

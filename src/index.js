@@ -1,5 +1,11 @@
 import mainPage from "./Modules/mainPage";
 import menuPage from './Modules/menuPage';
+import contactPage from "./Modules/contactPage";
+
+const scrollTop = () =>{
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
 const createHeader = () =>{
     let header = document.createElement('header')
@@ -7,12 +13,25 @@ const createHeader = () =>{
     logo.setAttribute('src','images/logo.png')
     logo.setAttribute('alt','logo')
     let homeButton = document.createElement('button')
-    homeButton.addEventListener('click', ()=>loadPage('main'))
+    homeButton.setAttribute('id', 'mainButton')
+    homeButton.addEventListener('click', ()=>{
+        loadPage('main')
+        scrollTop()
+    })
     homeButton.innerHTML='Home'
     let menuButton = document.createElement('button')
-    menuButton.addEventListener('click', ()=>loadPage('menu'))
+    menuButton.setAttribute('id', 'menuButton')
+    menuButton.addEventListener('click', ()=>{
+        loadPage('menu')
+        scrollTop()
+    })
     menuButton.innerHTML ='Menu'
     let contactButton = document.createElement('button')
+    contactButton.setAttribute('id', 'contactButton')
+    contactButton.addEventListener('click', ()=>{
+        loadPage('contact')
+        scrollTop()
+    })
     contactButton.innerHTML ='Contact'
     let orderButton = document.createElement('button')
     orderButton.setAttribute('id','order')
@@ -52,17 +71,21 @@ function loadPage(page) {
     content.appendChild(createHeader())
     switch(page) {
         case 'main':
-            content.appendChild(mainPage())
+            content.appendChild(mainPage.article)
             break
         case 'menu':
-            content.appendChild(menuPage())
+            content.appendChild(menuPage.article)
+            break
+        case 'contact':
+            content.appendChild(contactPage.article)
             break
         default:
-            content.appendChild(mainPage())
+            content.appendChild(mainPage.article)
             break
     }
     content.appendChild(createFooter())
+    document.querySelector(`#${page}Button`).setAttribute('class', 'actualPageButton')
     console.log('Done')
 }
-loadPage()
+loadPage('main')
 

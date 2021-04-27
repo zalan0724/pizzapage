@@ -16,20 +16,24 @@ const food = (name, price, picture) => {
 
     return card
 }
-const menuPage = () => {
+const menuPage = (() => {
     let article = document.createElement('article')
+    let h1 = document.createElement('h1')
+    h1.innerHTML = 'Providing the best quality pizzas'
+    article.appendChild(h1)
     let menu = document.createElement('div')
     menu.setAttribute('class', 'tab menu')
-    const pizzas = ['Cheese Pizza', 'Veggie Pizza', 'Pepperoni Pizza', 'Meat Pizza', 'Margherita Pizza', 'Hawaiian Pizza', 'Supreme Pizza']
-    const prices = [5,6,7,10,4,7,20]
-    const picture = ['cheese', 'veggie', 'pepperoni', 'meat', 'margherita', 'hawaiian', 'supreme']
-    for(let i=0; i<7; i++){
+    const pizzas = ['Cheese Pizza', 'Veggie Pizza', 'Pepperoni Pizza', 'Meat Pizza', 'Margherita Pizza',
+        'Hawaiian Pizza', 'Buffalo Pizza', 'Supreme Pizza']
+    const prices = [5,6,7,10,4,7,15,20]
+    const picture = ['cheese', 'veggie', 'pepperoni', 'meat', 'margherita', 'hawaiian', 'buffalo', 'supreme']
+    for(let i=0; i<pizzas.length; i++){
         menu.appendChild(food(pizzas[i],prices[i],picture[i]))
     }
     article.appendChild(menu)
 
 
-    return article
-}
+    return {article}
+})()
 
 export default menuPage
