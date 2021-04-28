@@ -130,7 +130,7 @@ const contactPage = (()=>{
     email.innerHTML = '<b>Email:</b> info@pizza.com'
     tab1.appendChild(email)
     let facebook = document.createElement('p')
-    facebook.innerHTML = '<b>Facebook:</b> www.facebook.com/orderapizza'
+    facebook.innerHTML = '<b>Facebook:</b> facebook.com/orderpizza'
     tab1.appendChild(facebook)
     article.appendChild(tab1)
 
