@@ -37,11 +37,20 @@ const createHeader = () =>{
     orderButton.setAttribute('id','order')
     orderButton.innerHTML = 'Order Now!'
 
+    let hamburgerButton = document.createElement('button')
+    hamburgerButton.innerHTML = `<svg width="40" height="31" viewBox="0 0 40 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="3" fill="white"/>
+        <rect y="14" width="40" height="3" fill="white"/>
+        <rect y="28" width="40" height="3" fill="white"/>
+        </svg>`
+    hamburgerButton.setAttribute('id', 'hamburger')
+
     header.appendChild(logo)
     header.appendChild(homeButton)
     header.appendChild(menuButton)
     header.appendChild(contactButton)
     header.appendChild(orderButton)
+    header.appendChild(hamburgerButton)
 
     return header
 }
@@ -63,6 +72,11 @@ const createFooter = () =>{
     footer.appendChild(credit)
 
     return footer
+}
+
+const hamburgerMenu = () => {
+    let menu = document.createElement('div')
+    menu.setAttribute('class', 'hamburgerMenu')
 }
 
 function loadPage(page) {
