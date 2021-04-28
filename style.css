@@ -10,10 +10,12 @@ html{
     background-size: cover;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    height: 100%;
 }
 
 body{
     margin: 0;
+    height: 100%;
 }
 
 header{
@@ -76,6 +78,9 @@ header button:hover{
     box-shadow: 1px 1px 6px rgb(57, 57, 57);
 }
 
+#content{
+    width: 100%;
+}
 article{
     position: relative;
     margin-top: 80px;
@@ -90,7 +95,8 @@ h1{
     font-size: 40pt;
     margin-top: 35vh;
     margin-bottom: 35vh;
-    backdrop-filter: blur(1px);
+    padding-right: 30px;
+    padding-left: 30px;
 }
 
 .tab{
@@ -204,4 +210,8 @@ h2{
 #map{
     height: 400px;
     width: 100%;
+}
+
+#hamburger{
+    display: none;
 }

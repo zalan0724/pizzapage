@@ -1,0 +1,34 @@
+@media only screen and (max-width: 650px){
+    header{
+        justify-content: space-between;
+    }
+
+    header button{
+        display: none;
+        height: 50px;
+        width: 50px;
+        margin-right: 0;
+    }
+    header button:hover{
+        background-color: rgba(0,0,0,0);
+    }
+
+    h1{
+        margin-bottom: 30vh;
+        margin-top: 30vh;
+    }
+    h2{
+        font-size: 2.3em;
+    }
+    .deliveryImages img{
+        width: 30vw;
+    }
+    #hamburger{
+        display: inline-block;
+    }
+    #hamburger svg{
+        fill: white;
+        height: 100%;
+        width: 100%;
+    }
+}
